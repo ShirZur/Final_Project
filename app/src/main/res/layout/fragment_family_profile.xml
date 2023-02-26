@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FamilyProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <ScrollView
+            android:id="@+id/profile_scollview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:background="@color/grey"
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="-196dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:background="@drawable/top_background">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_family_IMG"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="40dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bear" />
+
+                    <ImageView
+                        android:id="@+id/log_out_family_IMG"
+                        android:layout_width="50dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="12dp"
+
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:src="@drawable/baseline_logout_24" />
+
+                    <LinearLayout
+                        android:id="@+id/layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/profile_family_IMG"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/family_name_profile_TXT"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ZUR"
+                            android:paddingEnd="8dp"
+                            android:textColor="@color/white"
+                            android:textSize="42sp"
+                            android:textStyle="bold" />
+
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/edit_profile_family_BTN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit profile"
+                        android:layout_centerHorizontal="true"
+                        android:backgroundTint="@color/grey"
+                        android:textColor="@color/blue"
+                        android:layout_below="@+id/layout"
+
+                        />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/content_family_TXT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="this can be content that can be long  "
+                        android:maxLines="8"
+                        android:ellipsize="end"
+                        android:textSize="18sp"
+                        android:layout_margin="25dp"
+                        android:layout_marginVertical="4dp"
+                        android:padding="10dp"
+                        android:background="@drawable/custom_input"
+                        android:drawablePadding="12dp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="50dp"
+                            android:src="@drawable/baseline_email_24"/>
+                        <TextView
+                            android:id="@+id/email_profile_family_TXT"
+                            android:layout_width="0dp"
+                            android:layout_weight="3"
+                            android:layout_height="wrap_content"
+                            android:text="shirrzurr@gmail.com"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:padding="12dp"
+                            />
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="50dp"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/baseline_family_restroom_24"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="3"
+                            android:layout_height="wrap_content"
+                            android:text="Number of children"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:padding="12dp"
+                            />
+                        <ImageView
+                            android:id="@+id/smoker_IMG"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="50dp"
+                            android:src="@drawable/baseline_check_24"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/number_children_profile_TXT"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="5"
+                            android:textColor="@color/red"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:padding="12dp"/>
+                    </LinearLayout>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="We need a babysitter who is comfortable with"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:padding="12dp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/baseline_pets_24"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="Pets"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:padding="12dp"
+                            />
+                        <ImageView
+                            android:id="@+id/pets_IMG"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="50dp"
+                            android:src="@drawable/baseline_close_24"
+                            android:visibility="gone"
+                           />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/baseline_cookie_24"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="Cooking"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:padding="12dp"
+                            />
+                        <ImageView
+                            android:id="@+id/cooking_IMG"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="50dp"
+                            android:src="@drawable/baseline_close_24"
+                            android:visibility="gone"
+                            />
+
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/baseline_draw_24"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="Help with homework"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:padding="12dp"
+                            />
+                        <ImageView
+                            android:id="@+id/hw_IMG"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="50dp"
+                            android:src="@drawable/baseline_close_24"
+                            android:visibility="gone"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/baseline_task_alt_24"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="Household chores"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:padding="12dp"
+                            />
+                        <ImageView
+                            android:id="@+id/house_IMG"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="50dp"
+                            android:src="@drawable/baseline_close_24"
+                            android:visibility="gone"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/baseline_child_care_24"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:text="The age of the children"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:padding="12dp"
+                            />
+                      />
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/BTN1"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:text=""
+                            android:textSize="13sp"
+                            android:visibility="gone"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="@color/blue"
+                            />
+                        <Button
+                            android:id="@+id/BTN2"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:text=""
+                            android:textSize="13sp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/blue"
+                            android:visibility="gone"
+                            />
+                        <Button
+                            android:id="@+id/BTN3"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:text=""
+                            android:textSize="13sp"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="@color/blue"
+                            android:visibility="gone"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="279dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/BTN4"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/blue"
+                            android:visibility="gone"
+                            android:text=""
+                            android:textSize="13sp"
+                            />
+
+                        <Button
+                            android:id="@+id/BTN5"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/blue"
+                            android:visibility="gone"
+                            android:text=""
+                            android:textSize="13sp"
+                            />
+
+                    </LinearLayout>
+
+
+
+
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/google_maps_FRAME"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:padding="20dp"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_below="@id/profile_scollview"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/hourly_wage_TXT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:text="30.00/hr"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Hourly wage"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/contact_number_family_BTN"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blue"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="4"
+                android:maxLines="5"
+                android:singleLine="false"
+                android:text="" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

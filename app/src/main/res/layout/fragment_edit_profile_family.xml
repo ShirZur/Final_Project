@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfileFamilyFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:id="@+id/edit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/cancel_edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/white"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+            <Button
+                android:id="@+id/done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/white"
+                />
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_layout"
+
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="-196dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/family_profile_edit_IMG"
+                    android:layout_width="150dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bear" />
+
+                <TextView
+                    android:id="@+id/edit_family_profile_picture_TXT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Edit profile picture"
+                    android:textColor="@color/followingBg"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/family_name_edit_profile"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/the_image"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custom_input"
+                    android:drawablePadding="12dp"
+                    android:hint="Family name"
+                    android:paddingStart="12dp" />
+
+                <EditText
+                    android:id="@+id/number_phone_family_edit_profile"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/family_name_edit_TXT"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custom_input"
+                    android:drawablePadding="12dp"
+                    android:hint="Phone Number"
+                    android:paddingStart="12dp" />
+
+                <TextView
+                    android:id="@+id/num_of_kids_TXT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/number_phone_family_edit_TXT"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="16dp"
+                    android:text="The number of your children"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+                />
+
+                <Spinner
+                    android:id="@+id/num_of_kids_spinner"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/num_of_kids_edit"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custom_spinner"
+                    android:entries="@array/numOfKids" />
+
+                <TextView
+                    android:id="@+id/age_kids_TXT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/num_of_kids_spinner"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="16dp"
+                    android:text="The age of the children"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/age_kids_TXT"
+                    android:layout_marginStart="30dp"
+                    android:orientation="vertical">
+
+                    <CheckedTextView
+                        android:id="@+id/chacked_text_edit1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="Baby" />
+
+                    <CheckedTextView
+                        android:id="@+id/chacked_text_edit2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="toddler" />
+
+                    <CheckedTextView
+                        android:id="@+id/chacked_text_edit3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="A preschooler" />
+
+                    <CheckedTextView
+                        android:id="@+id/chacked_text_edit4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="A grade student at school" />
+
+                    <CheckedTextView
+                        android:id="@+id/chacked_text_edit5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="adolescent" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Preferred babysitting location"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <CheckedTextView
+                        android:id="@+id/home_checked_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Home" />
+
+                    <CheckedTextView
+                        android:id="@+id/babysitterhome_checked_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="At the babysitter's" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="We need a babysitter who is comfortable with"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <CheckedTextView
+                        android:id="@+id/pets_checked_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Pets" />
+
+                    <CheckedTextView
+                        android:id="@+id/cooking_checked_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Cooking" />
+
+                    <CheckedTextView
+                        android:id="@+id/hw_checked_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Help with homework" />
+
+                    <CheckedTextView
+                        android:id="@+id/house_checked_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Household chores" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/hourly_rate_layout_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="55dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:padding="10dp"
+                        android:text="Hourly wage"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/hourly_wage_spinner_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_spinner"
+                        android:entries="@array/hourly_rate" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/content_family_edit"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_below="@id/the_image"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/custom_input"
+                    android:gravity="top"
+                    android:hint="write here.."
+                    android:paddingStart="12dp"
+
+                    />
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+</FrameLayout>

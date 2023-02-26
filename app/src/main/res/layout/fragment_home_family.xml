@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFamilyFragment">
+
+    <TextView
+        android:id="@+id/hello_family_TXT"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:text="Hello Shir"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        />
+
+    <TextView
+        android:id="@+id/result_family_TXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="We have 4 result for you"
+        android:layout_marginBottom="20dp"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <!--<FrameLayout
+            android:id="@+id/FRAME_map_family"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:padding="20dp" />-->
+
+        <LinearLayout
+            android:id="@+id/list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/family_user_list_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

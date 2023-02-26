@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:id="@+id/edit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/cancel_edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/white"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+            <Button
+                android:id="@+id/done_edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/white"
+                />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_layout"
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="-196dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_edit_IMG"
+                    android:layout_width="150dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bear" />
+
+               <TextView
+                   android:id="@+id/edit_profile_picture_TXT"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Edit profile picture"
+                   android:layout_gravity="center"
+                   android:textStyle="bold"
+                   android:textColor="@color/followingBg"
+                   />
+
+                <EditText
+                    android:id="@+id/email_edit"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:hint="Email"
+                    android:background="@drawable/custom_input"
+                    android:paddingStart="12dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="12dp"
+                    />
+                <EditText
+                    android:id="@+id/first_name_edit"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:hint="First Name"
+                    android:background="@drawable/custom_input"
+                    android:paddingStart="12dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:drawablePadding="12dp"
+                    />
+
+                <EditText
+                    android:id="@+id/last_name_edit"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:hint="Last Name"
+                    android:background="@drawable/custom_input"
+                    android:paddingStart="12dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="12dp"
+                    />
+
+                <EditText
+                    android:id="@+id/number_phone_edit"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:hint="Number Phone"
+                    android:background="@drawable/custom_input"
+                    android:paddingStart="12dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="12dp"
+                    />
+
+                <EditText
+                    android:id="@+id/age_edit"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:hint="age"
+                    android:background="@drawable/custom_input"
+                    android:paddingStart="12dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="12dp"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/hourly_rate_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/chacked_text_layout"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Hourly rate"
+                        android:layout_marginStart="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        />
+                    <Spinner
+                        android:id="@+id/hourly_rate_spinner_edit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:layout_marginEnd="90dp"
+                        android:background="@drawable/custom_spinner"
+                        android:entries="@array/hourly_rate"
+                        android:layout_centerHorizontal="true"/>
+
+                </LinearLayout>
+
+                <CheckedTextView
+                    android:id="@+id/smoker_chacked_edit"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:text="Smoker"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                    android:checked="false"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    />
+
+                <CheckedTextView
+                    android:id="@+id/license_chacked_edit"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Has a driver license"
+                    android:gravity="center"
+                    android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                    android:checked="false"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    />
+
+                <CheckedTextView
+                    android:id="@+id/experience_chacked_edit"
+                    android:layout_width="310dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Experience"
+                    android:gravity="center"
+                    android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                    android:checked="false"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/content_nanny_edit"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_below="@id/the_image"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custom_input"
+                    android:gravity="top"
+                    android:hint="write here.."
+                    android:paddingStart="12dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="60dp"
+
+                    />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+</FrameLayout>

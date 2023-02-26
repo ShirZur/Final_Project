@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    tools:context=".FamilyDetails1Activity">
+
+
+    <LinearLayout
+        android:id="@+id/the_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/c_background2"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width= "wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:text="Some details about your family"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/blue"
+            android:gravity="center"
+            android:layout_gravity="center"
+            />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/bear"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/family_name_edit_TXT"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="Family name"
+        android:layout_below="@+id/the_image"
+        android:background="@drawable/custom_input"
+        android:paddingStart="12dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="12dp"
+        />
+
+    <EditText
+        android:id="@+id/number_phone_family_edit_TXT"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="Phone Number"
+        android:layout_below="@+id/family_name_edit_TXT"
+        android:background="@drawable/custom_input"
+        android:paddingStart="12dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="12dp"
+        />
+
+
+    <TextView
+        android:layout_below="@+id/number_phone_family_edit_TXT"
+        android:id="@+id/num_of_kids_TXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="16dp"
+        android:text="The number of your children"
+        />
+
+    <Spinner
+        android:layout_below="@+id/num_of_kids_TXT"
+        android:id="@+id/num_of_kids_spinner"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:entries="@array/numOfKids"
+        android:background="@drawable/custom_spinner"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_below="@+id/num_of_kids_spinner"
+        android:id="@+id/age_kids_TXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        android:text="The age of the children"
+        android:layout_marginStart="55dp"
+        android:textStyle="bold"
+
+        />
+
+    <LinearLayout
+        android:layout_below="@+id/age_kids_TXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <CheckedTextView
+            android:id="@+id/chacked_text_view1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Baby"
+            android:layout_marginStart="55dp"
+            android:gravity="center"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="false"
+            />
+
+        <CheckedTextView
+            android:id="@+id/chacked_text_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="toddler"
+            android:layout_marginStart="55dp"
+            android:gravity="center"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="false"
+            />
+
+        <CheckedTextView
+            android:id="@+id/chacked_text_view3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A preschooler"
+            android:layout_marginStart="55dp"
+            android:gravity="center"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="false"
+            />
+
+        <CheckedTextView
+            android:id="@+id/chacked_text_view4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A grade student at school"
+            android:layout_marginStart="55dp"
+            android:gravity="center"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="false"
+            />
+
+        <CheckedTextView
+            android:id="@+id/chacked_text_view5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="adolescent"
+            android:layout_marginStart="55dp"
+            android:gravity="center"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="false"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/next1_family_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:backgroundTint="@color/c_background"
+        android:textAllCaps="false"
+        android:text="Next"
+        />
+
+    <Button
+        android:id="@+id/back1_family_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="@color/c_background"
+        android:textAllCaps="false"
+        android:text="Back"
+        />
+
+
+
+
+</RelativeLayout>

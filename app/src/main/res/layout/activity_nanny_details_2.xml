@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    tools:context=".NannyDetails2Activity">
+
+    <LinearLayout
+        android:id="@+id/the_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/c_background2"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width= "wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="A few more details about you.."
+            android:textColor="@color/blue"
+            android:gravity="center"
+            android:layout_gravity="center"
+            />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/bear"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/chacked_text_layout"
+        android:layout_below="@+id/the_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        >
+
+        <CheckedTextView
+            android:id="@+id/smoker_chacked_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Smoker"
+            android:gravity="center"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="false"
+            android:textStyle="bold"
+            android:padding="10dp"
+            />
+
+        <CheckedTextView
+            android:id="@+id/license_chacked_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Has a driver license"
+            android:gravity="center"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="false"
+            android:textStyle="bold"
+            android:padding="10dp"
+            />
+
+        <CheckedTextView
+            android:id="@+id/experience_chacked_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Experience"
+            android:gravity="center"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="false"
+            android:textStyle="bold"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/hourly_rate_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/chacked_text_layout"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Hourly rate"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            />
+        <Spinner
+            android:id="@+id/hourly_rate_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_spinner"
+            android:entries="@array/hourly_rate"
+            android:layout_centerHorizontal="true"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/languages_TXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What languages do you know?"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@id/hourly_rate_layout"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/languages_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/languages_TXT"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/hebrew_BTN"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Hebrew"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/blue"/>
+        <Button
+            android:id="@+id/arabic_BTN"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="Arabic"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/blue"/>
+        <Button
+            android:id="@+id/english_BTN"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="English"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/blue"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/languages_layout"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/spanish_BTN"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:text="Spanish"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/blue"/>
+
+        <Button
+            android:id="@+id/frach_BTN"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:text="French"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/blue"/>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/next2_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:backgroundTint="@color/c_background"
+        android:text="Next"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/back2_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="@color/c_background"
+        android:text="Back"
+        android:textAllCaps="false"
+        />
+
+
+
+
+</RelativeLayout>
