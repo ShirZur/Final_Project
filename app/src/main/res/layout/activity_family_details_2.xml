@@ -43,39 +43,7 @@
         android:orientation="vertical"
         >
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Preferred babysitting location"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                />
 
-            <CheckedTextView
-                android:id="@+id/home_checked"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
-                android:checked="false"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="Home" />
-
-            <CheckedTextView
-                android:id="@+id/babysitterhome_checked"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="At the babysitter's"
-                android:gravity="center"
-                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
-                android:checked="false"
-                android:padding="10dp"
-                />
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"

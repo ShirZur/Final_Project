@@ -29,21 +29,6 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-               /*AuthCredential authCredential = EmailAuthProvider.getCredential("shirrzurr@gmail.com","RonZur050");
-                currentUser.reauthenticate(authCredential).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        currentUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if(task.isSuccessful()){
-
-                                }
-                            }
-                        });
-                    }
-                });*/
-
 
                if(currentUser == null){
                     startActivity(new Intent(SplashActivity.this, CreateUserActivity.class));

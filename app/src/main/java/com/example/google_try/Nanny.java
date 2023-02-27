@@ -28,6 +28,24 @@ public class Nanny implements DBInterface{
 
     private String profilePicture = "";
 
+    public double getLat() {
+        return lat;
+    }
+
+    public Nanny setLat(double lat) {
+        this.lat = lat;
+        return this;
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public Nanny setLon(double lon) {
+        this.lon = lon;
+        return this;
+    }
+
     private double lat = 0.0;
 
     private double lon = 0.0;

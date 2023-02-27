@@ -97,9 +97,8 @@ public class FamilyProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_family_profile,container,false);
         findViews(view);
+
         getFamilyDataFromFirebase();
-        googleMapFragment = new GoogleMapFragment();
-        getChildFragmentManager().beginTransaction().add(R.id.google_maps_FRAME,googleMapFragment).commit();
 
         setOnClick();
 
@@ -139,6 +138,9 @@ public class FamilyProfileFragment extends Fragment {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(!uid.equals(firebaseAuth.getCurrentUser().getUid())){
+                    edit_profile_family_BTN.setVisibility(View.GONE);
+                }
                 String path = "";
                 if(!uid.equals(firebaseAuth.getCurrentUser().getUid())){
                     path = "Nanny_User";
@@ -152,6 +154,14 @@ public class FamilyProfileFragment extends Fragment {
                             Family family = task.getResult().getValue(Family.class);
 
                             assert family != null;
+
+                            googleMapFragment = new GoogleMapFragment();
+                            Bundle bundle = new Bundle();
+                            bundle.putDouble("LAT", family.getLat());
+                            bundle.putDouble("LON", family.getLon());
+                            bundle.putString("NAME", family.getFamily_name() + " Family");
+
+                            getChildFragmentManager().beginTransaction().add(R.id.google_maps_FRAME,GoogleMapFragment.class,bundle).commit();
 
                             family_name_profile_TXT.setText(family.getFamily_name());
                             content_family_TXT.setText(family.getContent_of_family());

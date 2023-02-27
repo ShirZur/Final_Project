@@ -27,7 +27,7 @@ public class NannyOrJobActivity extends AppCompatActivity {
 
         findViews();
         startVideo();
-        getTheIntent();
+
         setOnClick();
     }
 
@@ -35,11 +35,10 @@ public class NannyOrJobActivity extends AppCompatActivity {
         find_nanny_BTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findNanny = true;
-
                 Intent intent = new Intent(NannyOrJobActivity.this,FamilyDetails1Activity.class);
                 intent.putExtra("EMAIL",email);
                 intent.putExtra("UID",uid);
+                Log.d("AABBCC", uid + " putFindNanny");
                 startActivity(intent);
 
             }
@@ -53,6 +52,7 @@ public class NannyOrJobActivity extends AppCompatActivity {
                 intent.putExtra("EMAIL",email);
                 intent.putExtra("UID",uid);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -81,12 +81,19 @@ public class NannyOrJobActivity extends AppCompatActivity {
         videoView = findViewById(R.id.videoview);
         find_nanny_BTN = findViewById(R.id.find_nanny_BTN);
         find_job_BTN = findViewById(R.id.find_job_BTN);
+
     }
 
     @Override
     protected void onRestart() {
         videoView.start();
         super.onRestart();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getTheIntent();
     }
 
     @Override

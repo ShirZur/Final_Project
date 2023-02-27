@@ -1,5 +1,6 @@
 package com.example.google_try;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -32,6 +34,8 @@ public class HomeFamilyFragment extends Fragment implements RecyclerViewClickInt
 
     private GoogleMapFragment googleMapFragment;
     private RecyclerView family_user_list_recycler;
+
+    private TextView hello_family_TXT, result_family_TXT;
 
     private ImageView change_height_IMG;
 
@@ -123,6 +127,7 @@ public class HomeFamilyFragment extends Fragment implements RecyclerViewClickInt
                     Nanny nanny = dataSnapShot.getValue(Nanny.class);
                     nannyUserList.add(nanny);
                 }
+                result_family_TXT.setText("We have " + nannyUserList.size() + " results for you");
                 myAdapter.notifyDataSetChanged();
             }
 
@@ -132,10 +137,29 @@ public class HomeFamilyFragment extends Fragment implements RecyclerViewClickInt
             }
         });
 
-       // googleMapFragment = new GoogleMapFragment();
-        //getChildFragmentManager().beginTransaction().add(R.id.FRAME_map_family,googleMapFragment).commit();
+        initView();
 
         return view;
+    }
+
+    private void initView() {
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference mDatabase = db.getReference();
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child("Family_User").child(firebaseAuth.getCurrentUser().getUid()).exists()) {
+                    hello_family_TXT.setText("Hello " + dataSnapshot.child("Family_User").child(firebaseAuth.getCurrentUser().getUid()).child("family_name").getValue(String.class) + " Family!");
+                }  //do something if not exists
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+        });
     }
 
     private void setOnClick() {
@@ -144,6 +168,8 @@ public class HomeFamilyFragment extends Fragment implements RecyclerViewClickInt
     private void findViews(View view) {
        // FRAME_map_family = view.findViewById(R.id.FRAME_map_family);
         family_user_list_recycler = view.findViewById(R.id.family_user_list_recycler);
+        result_family_TXT = view.findViewById(R.id.result_family_TXT);
+        hello_family_TXT = view.findViewById(R.id.hello_family_TXT);
     }//
 
     @Override

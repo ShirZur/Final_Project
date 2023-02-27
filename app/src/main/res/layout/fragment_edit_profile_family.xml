@@ -111,7 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/number_phone_family_edit_TXT"
-                    android:layout_marginStart="55dp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="16dp"
                     android:text="The number of your children"
                     android:textColor="@color/black"
@@ -120,11 +120,12 @@
 
                 <Spinner
                     android:id="@+id/num_of_kids_spinner"
-                    android:layout_width="300dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/num_of_kids_edit"
                     android:layout_centerHorizontal="true"
                     android:layout_marginStart="20dp"
+                    android:layout_marginEnd="70dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/custom_spinner"
                     android:entries="@array/numOfKids" />
@@ -134,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/num_of_kids_spinner"
-                    android:layout_marginStart="55dp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="16dp"
                     android:text="The age of the children"
                     android:textColor="@color/black"
@@ -143,8 +144,9 @@
                     />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="70dp"
                     android:layout_below="@+id/age_kids_TXT"
                     android:layout_marginStart="30dp"
                     android:orientation="vertical">
@@ -196,44 +198,13 @@
                 </LinearLayout>
 
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Preferred babysitting location"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-
-                    <CheckedTextView
-                        android:id="@+id/home_checked_edit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
-                        android:checked="false"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="Home" />
-
-                    <CheckedTextView
-                        android:id="@+id/babysitterhome_checked_edit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
-                        android:checked="false"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="At the babysitter's" />
-                </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
+                    android:layout_marginEnd="70dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -289,7 +260,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="30dp"
-                    android:layout_marginEnd="55dp"
+                    android:layout_marginEnd="70dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -318,6 +289,7 @@
                     android:layout_width="300dp"
                     android:layout_height="200dp"
                     android:layout_marginStart="30dp"
+                    android:layout_marginBottom="20dp"
                     android:layout_below="@id/the_image"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/custom_input"

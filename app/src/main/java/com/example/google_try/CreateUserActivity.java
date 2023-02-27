@@ -38,6 +38,7 @@ public class CreateUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_user);
 
         findViews();
+        requestLocationPermissions();
         setOnClick();
         firebaseAuth = FirebaseAuth.getInstance();
     }
@@ -85,14 +86,13 @@ public class CreateUserActivity extends AppCompatActivity {
 
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
             if(task.isSuccessful()){
-                String uid = "" + Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
-                Utility.showToast(CreateUserActivity.this,"Succesfully create account,Check email to verify");
-                //firebaseAuth.getCurrentUser().sendEmailVerification();
-                //firebaseAuth.signOut();
+                String uid =  Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid() + "";
+                Utility.showToast(CreateUserActivity.this,"Succesfully create account");
                 Intent intent = new Intent(CreateUserActivity.this, NannyOrJobActivity.class);
                 intent.putExtra("EMAIL",email);
                 intent.putExtra("UID",uid);
                 startActivity(intent);
+                finish();
 
             }else{
                 Utility.showToast(CreateUserActivity.this, task.getException().getLocalizedMessage());
@@ -118,6 +118,30 @@ public class CreateUserActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+
+    private void requestLocationPermissions() {
+        ActivityResultLauncher<String[]> locationPermissionRequest =
+                registerForActivityResult(new ActivityResultContracts
+                                .RequestMultiplePermissions(), result -> {
+                            Boolean fineLocationGranted = result.getOrDefault(
+                                    Manifest.permission.ACCESS_FINE_LOCATION, false);
+                            Boolean coarseLocationGranted = result.getOrDefault(
+                                    Manifest.permission.ACCESS_COARSE_LOCATION, false);
+                            if (fineLocationGranted != null && fineLocationGranted) {
+                                Log.d("permission", "fine location granted");
+                            } else if (coarseLocationGranted != null && coarseLocationGranted) {
+                                Log.d("permission", "coarse location granted");
+                            } else {
+                                Log.d("permission", "location permission denied");
+                            }
+                        }
+                );
+
+        locationPermissionRequest.launch(new String[]{
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+        });
     }
 
 

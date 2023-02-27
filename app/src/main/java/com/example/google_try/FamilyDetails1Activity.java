@@ -52,6 +52,7 @@ public class FamilyDetails1Activity extends AppCompatActivity {
     private void getTheIntent() {
         email = getIntent().getStringExtra("EMAIL");
         uid = getIntent().getStringExtra("UID");
+
     }
 
     private void setOnClick() {

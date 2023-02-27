@@ -67,7 +67,6 @@ public class HomeFragment extends Fragment implements RecyclerViewClickInterface
 
     private SimpleLocation simpleLocation;
 
-    private int arraySize = 0;
 
     private double lat,lon;
 
@@ -89,12 +88,11 @@ public class HomeFragment extends Fragment implements RecyclerViewClickInterface
         this.map_callback = map_callback;
     }
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
+
     private String mParam1;
     private String mParam2;
 
@@ -150,8 +148,6 @@ public class HomeFragment extends Fragment implements RecyclerViewClickInterface
                 for(DataSnapshot dataSnapShot : snapshot.getChildren()){
                     Family family = dataSnapShot.getValue(Family.class);
                     familyUserList.add(family);
-
-                    arraySize ++;
                 }
                 result_TXT.setText("We have " + familyUserList.size() + " results for you");
                 familyAdapter.notifyDataSetChanged();
@@ -168,10 +164,6 @@ public class HomeFragment extends Fragment implements RecyclerViewClickInterface
 
         initViews();
 
-       // simpleLocation = new SimpleLocation(this.getActivity().getApplicationContext());
-        //findLocation(simpleLocation);
-        //googleMapFragment = new GoogleMapFragment();
-        //getChildFragmentManager().beginTransaction().add(R.id.FRAME_map,googleMapFragment).commit();
 
 
         return view;
@@ -212,8 +204,6 @@ public class HomeFragment extends Fragment implements RecyclerViewClickInterface
 
     private void findViews(View view) {
         recyclerView = view.findViewById(R.id.nanny_user_list);
-       // FRAME_map = view.findViewById(R.id.FRAME_map);
-        //change_height_IMG = view.findViewById(R.id.change_height_IMG);
         list_layout = view.findViewById(R.id.list_layout);
         hello_TXT = view.findViewById(R.id.hello_TXT);
         result_TXT = view.findViewById(R.id.result_TXT);

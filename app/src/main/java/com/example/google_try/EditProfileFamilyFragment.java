@@ -383,8 +383,6 @@ public class EditProfileFamilyFragment extends Fragment {
         chacked_text_edit3 = view.findViewById(R.id.chacked_text_edit3);
         chacked_text_edit4 = view.findViewById(R.id.chacked_text_edit4);
         chacked_text_edit5 = view.findViewById(R.id.chacked_text_edit5);
-        home_checked_edit = view.findViewById(R.id.home_checked_edit);
-        babysitterhome_checked_edit = view.findViewById(R.id.babysitterhome_checked_edit);
         pets_checked_edit = view.findViewById(R.id.pets_checked_edit);
         cooking_checked_edit = view.findViewById(R.id.cooking_checked_edit);
         hw_checked_edit = view.findViewById(R.id.hw_checked_edit);

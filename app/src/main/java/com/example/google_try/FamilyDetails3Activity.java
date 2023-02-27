@@ -26,10 +26,11 @@ import java.io.IOException;
 import java.util.UUID;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import im.delight.android.location.SimpleLocation;
 
 public class FamilyDetails3Activity extends AppCompatActivity {
 
-    private boolean baby, toddler, preschooler, student, adolescent, isHome, isBabysitterHome, isPets, isCooking
+    private boolean baby, toddler, preschooler, student, adolescent, isPets, isCooking
             ,isHW, isHouseChores;
 
     private String email,uid,family_name, number_phone, num_kids , hourly_wage, content_of_family;
@@ -46,6 +47,10 @@ public class FamilyDetails3Activity extends AppCompatActivity {
 
     private Uri imagePath;
 
+    private double lat, lon;
+
+    private SimpleLocation simpleLocation;
+
     private static final int REQUEST_CODE = 101;
 
     @Override
@@ -55,8 +60,16 @@ public class FamilyDetails3Activity extends AppCompatActivity {
 
         findViews();
         getTheIntent();
+        simpleLocation = new SimpleLocation(getApplicationContext());
+        findLocation(simpleLocation);
         setOnClick();
 
+    }
+
+    private void findLocation(SimpleLocation simpleLocation) {
+        simpleLocation.beginUpdates();
+        this.lat = simpleLocation.getLatitude();
+        this.lon = simpleLocation.getLongitude();
     }
 
     private void setOnClick() {
@@ -144,8 +157,6 @@ public class FamilyDetails3Activity extends AppCompatActivity {
        family.setEmail(email);
        family.setNumberPhone(number_phone);
        family.setFamily_name(family_name);
-       family.setHome(isHome);
-       family.setBabysitterHome(isBabysitterHome);
        family.setNumber_of_kids(num_kids);
        family.setAdolescent(adolescent);
        family.setToddle(toddler);
@@ -156,7 +167,10 @@ public class FamilyDetails3Activity extends AppCompatActivity {
        family.setHw(isHW);
        family.setCooking(isCooking);
        family.setHouseChores(isHouseChores);
+        Log.d("AABBCC", uid + "3");
        family.setUid(uid);
+       family.setLat(lat);
+       family.setLon(lon);
        family.setProfilePicture(profilePicture);
        family.loadToDataBade();
         startActivity(new Intent(FamilyDetails3Activity.this,MainActivity.class));
@@ -170,15 +184,12 @@ public class FamilyDetails3Activity extends AppCompatActivity {
         family_name = getIntent().getStringExtra("FAMILY_NAME");
         number_phone = getIntent().getStringExtra("NUMBER_PHONE");
         num_kids = getIntent().getStringExtra("NUMBER_OF_KIDS");
-        Log.d("ABCDEF",num_kids);
         baby = getIntent().getBooleanExtra("BABY",false);
         toddler = getIntent().getBooleanExtra("TODDLER",false);
         preschooler = getIntent().getBooleanExtra("PRESCHOOLER",false);
         student = getIntent().getBooleanExtra("STUDENT",false);
         adolescent = getIntent().getBooleanExtra("ADOLESCENT",false);
         hourly_wage = getIntent().getStringExtra("HOURLY_WAGE");
-        isHome = getIntent().getBooleanExtra("HOME",false);
-        isBabysitterHome = getIntent().getBooleanExtra("BABY_HOME",false);
         isPets = getIntent().getBooleanExtra("PETS",false);
         isCooking = getIntent().getBooleanExtra("HW",false);
         isHW = getIntent().getBooleanExtra("COOKING",false);

@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.UUID;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import im.delight.android.location.SimpleLocation;
 
 public class NannyDetails3Activity extends AppCompatActivity {
 
@@ -63,8 +64,8 @@ public class NannyDetails3Activity extends AppCompatActivity {
 
     private double lon = 0.0;
 
-    private Location currentLocation;
-    FusedLocationProviderClient fusedLocationProviderClient;
+    private SimpleLocation simpleLocation;
+
     private static final int REQUEST_CODE = 101;
 
     @Override
@@ -72,32 +73,20 @@ public class NannyDetails3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nanny_details_3);
 
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-        fetchLastLocation();
 
         findViews();
         getTheIntent();
+        simpleLocation = new SimpleLocation(getApplicationContext());
+        findLocation(simpleLocation);
         setOnClick();
     }
 
-    private void fetchLastLocation() {
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-           ActivityCompat.requestPermissions(this,new String[]
-                   {Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_CODE);
-            return;
-        }
-        Task<Location> task = fusedLocationProviderClient.getLastLocation();
-        task.addOnSuccessListener(new OnSuccessListener<Location>() {
-            @Override
-            public void onSuccess(Location location) {
-                if(location != null){
-                    currentLocation = location;
-                    SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_maps_fragment);
-
-                }
-            }
-        });
+    private void findLocation(SimpleLocation simpleLocation) {
+        simpleLocation.beginUpdates();
+        this.lat = simpleLocation.getLatitude();
+        this.lon = simpleLocation.getLongitude();
     }
+
 
     private void setOnClick() {
         next3_BTN.setOnClickListener(v -> putDetails());
@@ -156,6 +145,8 @@ public class NannyDetails3Activity extends AppCompatActivity {
         nanny.setSmoker(isSmoke);
         nanny.setHasDrivingLicense(drivingLicense);
         nanny.setContentAboutNanny(content_nanny);
+        nanny.setLat(lat);
+        nanny.setLon(lon);
         nanny.setProfilePicture(profilePicture);
         nanny.loadToDataBade();
         startActivity(new Intent(NannyDetails3Activity.this,MainActivity.class));

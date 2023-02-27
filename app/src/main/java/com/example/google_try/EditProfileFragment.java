@@ -167,7 +167,6 @@ public class EditProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Log.d("AAAA", "avivvv");
                 FirebaseDatabase.getInstance().getReference("Nanny_User/" + FirebaseAuth.getInstance().getCurrentUser().getUid() + "/firstName").setValue(first_name_edit.getText().toString());
                 FirebaseDatabase.getInstance().getReference("Nanny_User/" + FirebaseAuth.getInstance().getCurrentUser().getUid() + "/lastName").setValue(last_name_edit.getText().toString());
                 FirebaseDatabase.getInstance().getReference("Nanny_User/" + FirebaseAuth.getInstance().getCurrentUser().getUid() + "/email").setValue(email_edit.getText().toString());

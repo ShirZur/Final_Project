@@ -17,26 +17,27 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Google_try"
         tools:targetApi="31">
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAJfMU2KjcYTIYJb2kPrjbGski75IReJoY" />
+            android:value="AIzaSyDxF7rPqmdyz8jt3tApXBz9dAk9xX-4Vj4" />
 
         <activity
             android:name=".FamilyDetails3Activity"
             android:exported="false"
-            android:launchMode="singleTask" />
+             />
         <activity
             android:name=".FamilyDetails2Activity"
             android:exported="false"
-            android:launchMode="singleTask" />
+            />
         <activity
             android:name=".FamilyDetails1Activity"
             android:exported="false"
-            android:launchMode="singleTask" />
+            />
         <activity
             android:name=".ListViewActivity"
             android:exported="false" />
@@ -49,18 +50,18 @@
         <activity
             android:name=".NannyDetails2Activity"
             android:exported="false"
-            android:launchMode="singleTask" />
+             />
         <activity
             android:name=".NannyDetails1Activity"
             android:exported="false"
-            android:launchMode="singleTask" />
+           />
         <activity
             android:name=".StartCreateProfileActivity"
             android:exported="false" />
         <activity
             android:name=".NannyOrJobActivity"
             android:exported="false"
-            android:launchMode="singleTask" />
+           />
         <activity
             android:name=".CreateUserActivity"
             android:exported="false" />

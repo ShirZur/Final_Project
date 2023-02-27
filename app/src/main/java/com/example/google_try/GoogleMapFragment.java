@@ -80,15 +80,10 @@ public class GoogleMapFragment extends Fragment {
     }
 
     public void setLocation(double lat, double lon, String name){
-        if(supportMapFragment == null){
-            Log.d("AA", "Shy");
-            return;
-        }
         supportMapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(@NonNull GoogleMap googleMap) {
                 LatLng latLng = new LatLng(lat,lon);
-                Log.d("AABBCC", lat + " " + lon);
                 MarkerOptions options = new MarkerOptions().position(latLng).title(name);
                 googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
                 googleMap.addMarker(options);

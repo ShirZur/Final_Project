@@ -105,9 +105,6 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile,container,false);
         findViews(view);
 
-        simpleLocation = new SimpleLocation(this.getActivity().getApplicationContext());
-        findLocation(simpleLocation);
-
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -116,14 +113,9 @@ public class ProfileFragment extends Fragment {
         }
         getNannyDataFromFirebase();
 
-        //googleMapFragment = new GoogleMapFragment();
-        Bundle bundle = new Bundle();
-        bundle.putDouble("LAT", lat);
-        bundle.putDouble("LON", lon);
-        bundle.putString("NAME", "shir");
 
-        getChildFragmentManager().beginTransaction().add(R.id.google_maps_FRAME,GoogleMapFragment.class,bundle).commit();
-        //googleMapFragment.setLocation(lat,lon,"shir");
+
+
 
 
         setOnClick();
@@ -192,6 +184,15 @@ public class ProfileFragment extends Fragment {
                             Nanny nanny = task.getResult().getValue(Nanny.class);
 
                             assert nanny != null;
+                            googleMapFragment = new GoogleMapFragment();
+                            Bundle bundle = new Bundle();
+                            bundle.putDouble("LAT", nanny.getLat());
+                            bundle.putDouble("LON", nanny.getLon());
+                            bundle.putString("NAME", nanny.getFirstName());
+
+                            getChildFragmentManager().beginTransaction().add(R.id.google_maps_FRAME,GoogleMapFragment.class,bundle).commit();
+
+
                             name_TXT.setText(nanny.getFirstName() + " " + nanny.getLastName());
                             age_TXT.setText(nanny.getAge());
                             hourly_rate_TXT.setText(nanny.getPerHour()+".00/hr");

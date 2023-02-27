@@ -41,38 +41,14 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         findViews();
-        requestLocationPermissions();
         setOnClick();
 
 
-
-
-
     }
 
-    private void requestLocationPermissions() {
-        ActivityResultLauncher<String[]> locationPermissionRequest =
-                registerForActivityResult(new ActivityResultContracts
-                                .RequestMultiplePermissions(), result -> {
-                            Boolean fineLocationGranted = result.getOrDefault(
-                                    Manifest.permission.ACCESS_FINE_LOCATION, false);
-                            Boolean coarseLocationGranted = result.getOrDefault(
-                                    Manifest.permission.ACCESS_COARSE_LOCATION, false);
-                            if (fineLocationGranted != null && fineLocationGranted) {
-                                Log.d("permission", "fine location granted");
-                            } else if (coarseLocationGranted != null && coarseLocationGranted) {
-                                Log.d("permission", "coarse location granted");
-                            } else {
-                                Log.d("permission", "location permission denied");
-                            }
-                        }
-                );
 
-        locationPermissionRequest.launch(new String[]{
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-        });
-    }
+
+
 
 
     private void setOnClick() {

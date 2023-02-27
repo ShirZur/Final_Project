@@ -11,8 +11,28 @@ public class Family implements DBInterface {
 
     private boolean baby;
     private boolean pets;
-    private boolean toddle, preschooler, student, adolescent,home, babysitterHome,  cooking
+    private boolean toddle, preschooler, student, adolescent,  cooking
             ,hw, houseChores;
+
+    private double lat, lon;
+
+    public double getLat() {
+        return lat;
+    }
+
+    public Family setLat(double lat) {
+        this.lat = lat;
+        return this;
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public Family setLon(double lon) {
+        this.lon = lon;
+        return this;
+    }
 
     public Family() {
     }
@@ -145,23 +165,6 @@ public class Family implements DBInterface {
         return this;
     }
 
-    public boolean isHome() {
-        return home;
-    }
-
-    public Family setHome(boolean home) {
-        this.home = home;
-        return this;
-    }
-
-    public boolean isBabysitterHome() {
-        return babysitterHome;
-    }
-
-    public Family setBabysitterHome(boolean babysitterHome) {
-        this.babysitterHome = babysitterHome;
-        return this;
-    }
 
     public boolean isCooking() {
         return cooking;

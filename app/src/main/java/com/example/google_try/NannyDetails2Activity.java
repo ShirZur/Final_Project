@@ -181,19 +181,7 @@ public class NannyDetails2Activity extends AppCompatActivity {
         intent.putExtra("LICENSE", drivingLicense);
         intent.putExtra("EXPERIENCE", experience);
         startActivity(intent);
-        /*Nanny nanny = new Nanny();
-      nanny.setFirstName(firstName);
-      nanny.setLaseName(lastName);
-      nanny.setEmail(email);
-      nanny.setUid(uid);
-      nanny.setNumberPhone(numberPhone);
-      nanny.setAge(age);
-      nanny.setPerHour(hourlyRate);
-      nanny.setLanguages(languages);
-      nanny.setExperienceWithChildren(experience);
-      nanny.setSmoker(isSmoke);
-      nanny.setHasDrivingLicense(drivingLicense);
-      nanny.loadToDataBade();*/
+
 
 
 

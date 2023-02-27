@@ -86,7 +86,7 @@
             android:layout_marginTop="12dp"
             app:passwordToggleEnabled="true"
             app:boxBackgroundColor="@color/blue"
-            android:hint="Password"
+            android:hint="Confirm Password"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -97,23 +97,6 @@
                 android:ems="15"/>
 
         </com.google.android.material.textfield.TextInputLayout>
-
-        <!--<EditText
-            android:id="@+id/password_sign_editTXT"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:background="@drawable/custom_input"
-            android:layout_marginTop="12dp"
-            android:hint="Password"
-            />
-        <EditText
-            android:id="@+id/confirm_password_sign_editTXT"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:background="@drawable/custom_input"
-            android:layout_marginTop="12dp"
-            android:hint="Confirm Password"
-            />-->
 
 
 

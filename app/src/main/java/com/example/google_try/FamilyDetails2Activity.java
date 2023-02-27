@@ -13,7 +13,7 @@ import android.widget.Spinner;
 
 public class FamilyDetails2Activity extends AppCompatActivity {
 
-    private CheckedTextView home_checked, babysitterhome_checked, pets_checked, cooking_checked, hw_checked, house_checked;
+    private CheckedTextView  pets_checked, cooking_checked, hw_checked, house_checked;
     private Button back2_family_BTN, next2_family_BTN;
 
     private String email,uid,family_name, number_phone, num_kids , hourly_wage;
@@ -48,24 +48,7 @@ public class FamilyDetails2Activity extends AppCompatActivity {
     }
 
     private void setOnClick() {
-        home_checked.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(babysitterhome_checked.isChecked()){
-                    babysitterhome_checked.toggle();
-                }
-                home_checked.toggle();
-            }
-        });
-        babysitterhome_checked.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(home_checked.isChecked()){
-                    home_checked.toggle();
-                }
-                babysitterhome_checked.toggle();
-            }
-        });
+
         pets_checked.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,8 +96,6 @@ public class FamilyDetails2Activity extends AppCompatActivity {
         intent.putExtra("PRESCHOOLER",preschooler);
         intent.putExtra("STUDENT",student);
         intent.putExtra("ADOLESCENT",adolescent);
-        intent.putExtra("HOME",home_checked.isChecked());
-        intent.putExtra("BABY_HOME",babysitterhome_checked.isChecked());
         intent.putExtra("PETS",pets_checked.isChecked());
         intent.putExtra("HW",hw_checked.isChecked());
         intent.putExtra("COOKING",cooking_checked.isChecked());
@@ -140,8 +121,6 @@ public class FamilyDetails2Activity extends AppCompatActivity {
     }
 
     private void findViews() {
-        home_checked = findViewById(R.id.home_checked);
-        babysitterhome_checked = findViewById(R.id.babysitterhome_checked);
         pets_checked = findViewById(R.id.pets_checked);
         cooking_checked = findViewById(R.id.cooking_checked);
         hw_checked = findViewById(R.id.hw_checked);

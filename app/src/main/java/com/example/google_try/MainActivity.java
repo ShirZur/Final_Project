@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.child("Family_User").child(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).exists()) {
+                            Log.d("AABB", uid);
                             if(!uid.equals(firebaseAuth.getCurrentUser().getUid())){
                                 profileFragment = new ProfileFragment();
                                 profileFragment.setUid(uid);;
@@ -188,18 +189,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    /*@Override
-    public void onItemClick(int position) {
-        Intent intent = new Intent(MainActivity.this,NannyProfileActivity.class);
-        intent.putExtra("UID",nannyUserList.get(position).getUid());
-        Log.d("SS",nannyUserList.get(position).getUid());
-        startActivity(intent);
-    }
-
-    @Override
-    public void onLongItemClick(int position) {
-
-    }*/
 
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
